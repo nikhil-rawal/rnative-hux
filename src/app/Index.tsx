@@ -26,6 +26,7 @@ function Index() {
         renderItem={({ item }) => <Text>{item}</Text>}
       />
       <Text>Location data</Text>
+      {/* Flatlist */}
       <FlatList
         style={{ margin: 5 }}
         data={locationData}
