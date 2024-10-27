@@ -1,6 +1,9 @@
 import { View, Text } from "react-native";
-
-const Field = ({ fname, lname }) => {
+interface Names {
+  fname: string;
+  lname: string;
+}
+const Field = ({ fname, lname }: Names) => {
   return (
     <View>
       <Text>

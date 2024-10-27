@@ -3,6 +3,11 @@ import Field from "../components/Field";
 
 function Index() {
   const listData = ["apple", "banana", "orange"];
+  const locationData = [
+    { id: 1, name: "Delhi" },
+    { id: 2, name: "Mumbai" },
+    { id: 3, name: "Kolkata" },
+  ];
   return (
     <View>
       <Text style={{ fontSize: 20 }}>Hello</Text>
@@ -15,9 +20,21 @@ function Index() {
         }}
         style={{ width: 200, height: 200 }}
       />
+      <Text>List Data</Text>
       <FlatList
         data={listData}
         renderItem={({ item }) => <Text>{item}</Text>}
+      />
+      <Text>Location data</Text>
+      <FlatList
+        style={{ margin: 5 }}
+        data={locationData}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <View>
+            <Text>{item.name}</Text>
+          </View>
+        )}
       />
     </View>
   );
